@@ -7,6 +7,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class UpdateUserTest {
 
@@ -40,7 +41,7 @@ public class UpdateUserTest {
         boolean actualResult = updateResponse.extract().path("success");
 
         assertEquals(200, actualStatusCode);
-        assertEquals(true, actualResult);
+        assertTrue(actualResult);
     }
 
     @Test
@@ -65,7 +66,7 @@ public class UpdateUserTest {
         boolean actualResult = updateResponse.extract().path("success");
 
         assertEquals(200, actualStatusCode);
-        assertEquals(true, actualResult);
+        assertTrue(actualResult);
     }
 
     @Test
@@ -90,7 +91,7 @@ public class UpdateUserTest {
         boolean actualResult = updateResponse.extract().path("success");
 
         assertEquals(200, actualStatusCode);
-        assertEquals(true, actualResult);
+        assertTrue(actualResult);
     }
 
     @Test

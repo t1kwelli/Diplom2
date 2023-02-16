@@ -14,6 +14,7 @@ import java.util.List;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class GetUserOrdersTest {
 
@@ -25,7 +26,7 @@ public class GetUserOrdersTest {
     private final List<String> ingredients = new ArrayList<>();
 
     @Before
-    public void setUp () throws InterruptedException {
+    public void setUp () {
         userClient = new UserClient();
         user = UserGenerator.getUniqueUser();
 
@@ -58,7 +59,7 @@ public class GetUserOrdersTest {
 
         assertEquals(200, statusCode);
         assertThat(userOrders.getOrders(), notNullValue());
-        assertEquals(true, userOrders.isSuccess());
+        assertTrue(userOrders.isSuccess());
         assertThat(userOrders.getTotal(), notNullValue());
         assertThat(userOrders.getTotalToday(), notNullValue());
     }
